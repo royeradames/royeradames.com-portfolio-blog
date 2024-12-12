@@ -8,7 +8,9 @@
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
     "lint": "eslint . --ext .js,.ts,.astro,.svelte",
-    "lint:fix": "eslint . --ext .js,.ts,.astro,.svelte --fix"
+    "lint:fix": "eslint . --ext .js,.ts,.astro,.svelte --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/svelte": "^7.0.1",
