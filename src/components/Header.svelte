@@ -2,7 +2,7 @@
   import profileImage from '../assets/profile-image.png';
 </script>
 
-<section class="flex h-[842px] w-[180px] shrink-0 flex-col items-start gap-4 bg-[#232339] p-6">
+<section class="flex h-[842px] w-[180px] shrink-0 flex-col items-start gap-4 bg-[#2E2E48] p-6">
   <header class="flex flex-col items-start justify-center gap-2 self-stretch">
     <img
       src={profileImage.src}
@@ -18,9 +18,9 @@
         Royer Adames
       </h1>
       <p
-        class="self-stretch text-xs font-medium leading-4 tracking-[0.12px] [font-family:Outfit] text-primary-gradient"
+        class="text-primary-gradient self-stretch text-xs font-medium leading-4 tracking-[0.12px] [font-family:Outfit]"
       >
-        Full-Stack Designer
+        Full-Stack Developer
       </p>
     </hgroup>
   </header>
@@ -41,9 +41,11 @@
 
   <ul class="m-0 flex w-full list-none gap-3 border-y border-white/10 py-4">
     <li>
-      <a href="mailto:adamesroyer@gmail.com" class="flex items-center gap-2 self-stretch">
-        <span class="h-4 w-4 shrink-0 rounded-[100px] [background:var(--Gray-Darkest,#232339)]"
-          ><svg
+      <a href="mailto:adamesroyer@gmail.com" class="group flex items-center gap-2 self-stretch">
+        <span
+          class="flex h-4 w-4 shrink-0 items-center justify-center rounded-[100px] group-hover:[background:var(--Gray-Darkest,#232339)]"
+        >
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             width="10"
             height="10"
