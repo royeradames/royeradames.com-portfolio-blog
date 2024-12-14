@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/profile-image.jpeg';
+
+type Link = {
+  href: string;
+  label: string;
+  value: string;
+  icon: astroHTML.JSX.Element;
+};
+
+const links: Link[] = [
+  {
+    href: 'mailto:adamesroyer@gmail.com',
+    label: 'Email',
+    value: 'adamesroyer@gmail.com',
+    icon: `<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="10"
+        viewBox="0 0 10 10"
+        fill="none">
+        <path
+          d="M8.3335 8.33335H1.66683C1.20659 8.33335 0.833496 7.96026 0.833496 7.50002V2.46377C0.852916 2.01775 1.22038 1.66627 1.66683 1.66669H8.3335C8.79373 1.66669 9.16683 2.03978 9.16683 2.50002V7.50002C9.16683 7.96026 8.79373 8.33335 8.3335 8.33335ZM1.66683 3.27835V7.50002H8.3335V3.27835L5.00016 5.50002L1.66683 3.27835ZM2.00016 2.50002L5.00016 4.50002L8.00016 2.50002H2.00016Z"
+          fill="#E2E6EE"/>
+      </svg>`,
+  },
+  {
+    href: 'https://royeradames.com',
+    label: 'Website',
+    value: 'https://royeradames.com',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+  <path d="M3.52721 8.55627C2.68465 8.55627 1.92504 8.04872 1.60255 7.27031C1.28006 6.49191 1.45819 5.59588 2.05388 5.00001L2.93805 4.11584L3.52721 4.70501L2.64346 5.58876C2.32766 5.90457 2.20432 6.36487 2.31991 6.79627C2.43551 7.22767 2.77247 7.56463 3.20387 7.68023C3.63527 7.79582 4.09557 7.67248 4.41138 7.35668L5.29513 6.47293L5.8843 7.06251L5.00055 7.94626C4.61058 8.33815 4.08007 8.55779 3.52721 8.55627ZM3.8218 6.76751L3.23263 6.17834L6.17888 3.23209L6.76805 3.82126L3.82221 6.76709L3.8218 6.76751ZM7.06305 5.88376L6.47346 5.29459L7.35722 4.41084C7.67732 4.09598 7.80396 3.63362 7.68898 3.19958C7.574 2.76555 7.23506 2.42653 6.80105 2.31144C6.36704 2.19636 5.90465 2.32289 5.58971 2.64293L4.70555 3.52668L4.11638 2.93751L5.00055 2.05334C5.81517 1.24583 7.12929 1.24871 7.94036 2.05978C8.75144 2.87085 8.75431 4.18497 7.9468 4.99959L7.06305 5.88334V5.88376Z" fill="#E2E6EE"/>
+</svg>`,
+  },
+  {
+    href: 'https://maps.app.goo.gl/DoVHmr6qFiWSQ2Pz7',
+    label: 'Address',
+    value: 'Florida, USA',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+  <path d="M5.00016 8.75002C4.47389 8.30112 3.98607 7.80899 3.54183 7.27877C2.87516 6.48252 2.0835 5.29669 2.0835 4.16669C2.08291 2.9865 2.7936 1.92227 3.88394 1.4706C4.97428 1.01894 6.22936 1.26887 7.0635 2.10377C7.61202 2.64986 7.91929 3.39268 7.91685 4.16669C7.91685 5.29669 7.12516 6.48252 6.4585 7.27877C6.01425 7.80899 5.52644 8.30112 5.00016 8.75002ZM5.00016 2.91669C4.55358 2.91669 4.14092 3.15494 3.91763 3.54169C3.69434 3.92844 3.69434 4.40494 3.91763 4.79169C4.14092 5.17844 4.55358 5.41669 5.00016 5.41669C5.69052 5.41669 6.25016 4.85704 6.25016 4.16669C6.25016 3.47633 5.69052 2.91669 5.00016 2.91669Z" fill="#D9DFE8"/>
+</svg>`,
+  },
+];
+---
+
+<section class="flex h-[842px] w-[180px] shrink-0 flex-col items-start gap-4 bg-[#2E2E48] p-6">
+  <header class="flex flex-col items-start justify-center gap-2 self-stretch">
+    <Image
+      src={profileImage}
+      height="48"
+      width="48"
+      alt="Profile"
+      class="h-12 w-12 rounded-[100px] [background:url(<path-to-image>)_lightgray_50%_/_cover_no-repeat]"
+    />
+    <hgroup class="flex flex-col items-start gap-1 self-stretch">
+      <h1
+        class="self-stretch text-base font-medium leading-5 tracking-[-0.32px] text-[color:var(--Gray-Lightest,#E2E6EE)] [font-family:Outfit]"
+      >
+        Royer Adames
+      </h1>
+      <p
+        class="text-primary-gradient self-stretch text-xs font-medium leading-4 tracking-[0.12px] [font-family:Outfit]"
+      >
+        Full-Stack Developer
+      </p>
+    </hgroup>
+  </header>
+
+  <blockquote>
+    <p
+      class="self-stretch text-[9px] font-medium leading-3 tracking-[0.18px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:Outfit]"
+    >
+      <span class="quote-mark">"</span>People value web development that values their needs.<span
+        class="quote-mark">"</span
+      >
+    </p>
+    <cite
+      class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']"
+      >Royer Adames</cite
+    >
+  </blockquote>
+
+  <ul class="m-0 flex w-full list-none flex-col gap-3 border-y border-white/10 py-4">
+    {
+      links.map((link) => (
+        <li>
+          <a href={link.href} class="group flex items-center gap-2 self-stretch">
+            <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-[100px] group-hover:[background:var(--Gray-Darkest,#232339)]">
+              <Fragment set:html={link.icon} />
+            </span>
+            <div>
+              <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
+                {link.label}
+              </p>
+              <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
+                {link.value}
+              </p>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
