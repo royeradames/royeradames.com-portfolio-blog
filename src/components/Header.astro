@@ -6,7 +6,7 @@ type Link = {
   href: string;
   label: string;
   value: string;
-  icon: astroHTML.JSX.Element;
+  icon: string;
 };
 
 const links: Link[] = [
@@ -42,16 +42,119 @@ const links: Link[] = [
 </svg>`,
   },
 ];
+
+type SocialLink = {
+  href: string;
+  label: string;
+  value: string;
+  icon: string;
+  iconClass: string;
+};
+
+const socials: SocialLink[] = [
+  {
+    href: 'https://x.com/RoyerAAdames',
+    label: 'Twitter',
+    value: '@RoyerAAdames',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+  <path d="M8.33126 3.28668C8.70477 3.06339 8.98425 2.71178 9.11751 2.29752C8.76653 2.50577 8.38252 2.65246 7.98209 2.73127C7.42692 2.14399 6.5473 2.00107 5.83476 2.38237C5.12221 2.76368 4.75313 3.5748 4.93376 4.36252C3.49609 4.29034 2.15666 3.61123 1.24876 2.49418C0.77494 3.31144 1.01707 4.35617 1.80209 4.88168C1.51822 4.87256 1.24064 4.7957 0.992506 4.65752C0.992506 4.66502 0.992506 4.67252 0.992506 4.68002C0.992671 5.53133 1.59266 6.26463 2.42709 6.43335C2.16378 6.50499 1.88759 6.51553 1.61959 6.46418C1.85426 7.19221 2.52524 7.69097 3.29001 7.70585C2.6566 8.20299 1.87437 8.47258 1.06917 8.47127C0.926453 8.47147 0.783844 8.46326 0.64209 8.44668C1.45975 8.97211 2.41141 9.251 3.38334 9.25002C4.73553 9.2593 6.03502 8.72623 6.99114 7.77002C7.94727 6.81382 8.48024 5.51429 8.47084 4.1621C8.47084 4.0846 8.46903 4.00752 8.46542 3.93085C8.81561 3.67777 9.11784 3.36424 9.35792 3.00502C9.03168 3.14963 8.68562 3.24457 8.33126 3.28668Z" fill="white"/>
+</svg>`,
+    iconClass: 'bg-[var(--Social-Twitter,#00ACEE)]',
+  },
+  {
+    href: 'https://www.linkedin.com/in/royer-adames/',
+    label: 'LinedIn',
+    value: 'Royer Adames',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+  <path d="M5.41667 9.25H3.75V4.25H5.41667V5.08333C5.77193 4.63136 6.31068 4.36191 6.88542 4.34875C7.919 4.35449 8.753 5.19557 8.75001 6.22917V9.25H7.08333V6.4375C7.01668 5.97193 6.6174 5.62649 6.14708 5.6275C5.94137 5.634 5.74718 5.72407 5.60935 5.87693C5.47152 6.02978 5.40194 6.23221 5.41667 6.4375V9.25ZM2.91667 9.25H1.25V4.25H2.91667V9.25ZM2.08333 3.41667C1.6231 3.41667 1.25 3.04357 1.25 2.58333C1.25 2.1231 1.6231 1.75 2.08333 1.75C2.54357 1.75 2.91667 2.1231 2.91667 2.58333C2.91667 2.80435 2.82887 3.01631 2.67259 3.17259C2.51631 3.32887 2.30435 3.41667 2.08333 3.41667Z" fill="white"/>
+</svg>`,
+    iconClass: 'bg-[var(--Social-Linkedin,#0077B5)]',
+  },
+  {
+    href: 'https://github.com/royeradames',
+    label: 'GitHub',
+    value: 'royeradames',
+    icon: `<svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+    <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+</svg>`,
+    iconClass: 'bg-white',
+  },
+];
+
+const languages: SocialLink[] = [
+  {
+    href: 'https://en.wikipedia.org/wiki/English_language',
+    label: 'English',
+    value: 'Professional working',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+  <g clip-path="url(#clip0_330_10998)">
+    <mask id="mask0_330_10998" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-2" y="-1" width="20" height="14">
+      <path d="M15.5554 -1H0.444282C-0.537558 -1 -1.3335 -0.164265 -1.3335 0.866667V11.1333C-1.3335 12.1643 -0.537558 13 0.444282 13H15.5554C16.5372 13 17.3332 12.1643 17.3332 11.1333V0.866667C17.3332 -0.164265 16.5372 -1 15.5554 -1Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask0_330_10998)">
+      <path d="M15.5554 -1H0.444282C-0.537558 -1 -1.3335 -0.164265 -1.3335 0.866667V11.1333C-1.3335 12.1643 -0.537558 13 0.444282 13H15.5554C16.5372 13 17.3332 12.1643 17.3332 11.1333V0.866667C17.3332 -0.164265 16.5372 -1 15.5554 -1Z" fill="#22438B"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M1.33312 -0.0666809L-0.467773 -0.0424142L-0.444662 1.79999L14.6504 12.0928L16.4611 12.0583L16.4273 10.2271L1.33312 -0.0666809Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.444065 -0.0666809L-0.444824 0.866652L15.5552 12.0667L16.4441 11.1333L0.444065 -0.0666809Z" fill="#C7152A"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6667 -0.0666809H16.4444V1.79999C16.4444 1.79999 5.99999 8.70292 1.34932 12.0928C1.29332 12.1339 -0.426675 12.0956 -0.426675 12.0956L-0.564453 10.3213L14.6667 -0.0666809Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5934 -0.092804L16.4441 0.866663L0.444065 12.0667L-0.444824 11.1333L15.5934 -0.092804Z" fill="#C7152A"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7774 -0.0666809H10.2218V3.66665H16.4441V8.33332H10.2218V12.0667H5.7774V8.33332H-0.444824V3.66665H5.7774V-0.0666809Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.66629 -0.0666809H9.33295V4.59999H16.4441V7.39999H9.33295V12.0667H6.66629V7.39999H-0.444824V4.59999H6.66629V-0.0666809Z" fill="#C7152A"/>
+      <path d="M15.5553 -0.533325H0.444173C-0.292206 -0.533325 -0.88916 0.0934762 -0.88916 0.866675V11.1333C-0.88916 11.9065 -0.292206 12.5333 0.444173 12.5333H15.5553C16.2917 12.5333 16.8886 11.9065 16.8886 11.1333V0.866675C16.8886 0.0934762 16.2917 -0.533325 15.5553 -0.533325Z" stroke="black" stroke-opacity="0.1"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_330_10998">
+      <rect width="18.6667" height="14" fill="white" transform="translate(-1.3335 -1)"/>
+    </clipPath>
+  </defs>
+</svg>
+`,
+    iconClass: '',
+  },
+  {
+    href: 'https://www.linkedin.com/in/royer-adames/',
+    label: 'Spanish',
+    value: 'Native',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+  <g clip-path="url(#clip0_330_11015)">
+    <mask id="mask0_330_11015" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="12">
+      <path d="M14.4762 0H1.52381C0.682233 0 0 0.716344 0 1.6V10.4C0 11.2837 0.682233 12 1.52381 12H14.4762C15.3178 12 16 11.2837 16 10.4V1.6C16 0.716344 15.3178 0 14.4762 0Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask0_330_11015)">
+      <path d="M14.4762 0H1.52381C0.682233 0 0 0.716344 0 1.6V10.4C0 11.2837 0.682233 12 1.52381 12H14.4762C15.3178 12 16 11.2837 16 10.4V1.6C16 0.716344 15.3178 0 14.4762 0Z" fill="#CD0B20"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3.20001H16V8.80001H0V3.20001Z" fill="#FFCB00"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.85738 4.97761V6.99361C6.85738 7.55361 6.34538 8.00161 5.71452 8.00161H4.19071C3.56138 8.00001 3.04785 7.54961 3.04785 6.99201V4.97601C3.04785 4.51841 3.38919 4.13601 3.85852 4.01201C4.00023 3.59601 4.43604 3.96881 4.95261 3.96881C5.47223 3.96881 5.90499 3.59841 6.04671 4.01281C6.51452 4.14001 6.85738 4.52321 6.85738 4.97761Z" fill="#C8B47C"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.85707 5.60001H7.61898V8.00001H6.85707V5.60001ZM2.28564 5.60001H3.04755V8.00001H2.28564V5.60001Z" fill="#B5B5B5"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.85707 7.20001H7.61898V8.00001H6.85707V7.20001ZM2.28564 7.20001H3.04755V8.00001H2.28564V7.20001Z" fill="#165C96"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.85707 4.79999H7.61898V5.59999H6.85707V4.79999ZM2.28564 4.79999H3.04755V5.59999H2.28564V4.79999Z" fill="#A0790A"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.80957 4.79999H4.57148V5.99999H3.80957V4.79999ZM5.33338 6.39999H6.09528V7.59999H5.33338V6.39999Z" fill="#D20636"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.3335 4.79999H6.0954V5.99999H5.3335V4.79999Z" fill="#A18793"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.80957 6.39999H4.57147V7.59999H3.80957V6.39999Z" fill="#FFE100"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.57148 4.8L3.80957 4H6.09528L5.33338 4.8H4.57148Z" fill="#B6161A"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.57129 3.20001H5.33319V4.00001H4.57129V3.20001Z" fill="#AC9300"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_330_11015">
+      <rect width="16" height="12" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>`,
+    iconClass: '',
+  },
+];
 ---
 
 <section class="flex h-[842px] w-[180px] shrink-0 flex-col items-start gap-4 bg-[#2E2E48] p-6">
   <header class="flex flex-col items-start justify-center gap-2 self-stretch">
     <Image
       src={profileImage}
-      height="48"
-      width="48"
+      height={144}
+      width={144}
       alt="Profile"
-      class="h-12 w-12 rounded-[100px] [background:url(<path-to-image>)_lightgray_50%_/_cover_no-repeat]"
+      class="h-12 w-12 rounded-[100px]"
+      quality={100}
+      format="webp"
     />
     <hgroup class="flex flex-col items-start gap-1 self-stretch">
       <h1
@@ -81,7 +184,7 @@ const links: Link[] = [
     >
   </blockquote>
 
-  <ul class="m-0 flex w-full list-none flex-col gap-3 border-y border-white/10 py-4">
+  <ul class="m-0 flex w-full list-none flex-col gap-3 border-t border-white/10 pt-4">
     {
       links.map((link) => (
         <li>
@@ -102,4 +205,72 @@ const links: Link[] = [
       ))
     }
   </ul>
+
+  <section class="flex w-full flex-col gap-3 border-t border-white/10 py-4">
+    <h2
+      class="text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']"
+    >
+      Socials
+    </h2>
+    <ul class="m-0 flex list-none flex-col gap-3">
+      {
+        socials.map((link) => (
+          <li>
+            <a href={link.href} class="group flex items-center gap-2 self-stretch">
+              <span
+                class:list={[
+                  'flex h-4 w-4 shrink-0 items-center justify-center rounded-[100px] group-hover:bg-[var(--Gray-Darkest,#232339)]',
+                  link.iconClass,
+                ]}
+              >
+                <Fragment set:html={link.icon} />
+              </span>
+              <div>
+                <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
+                  {link.label}
+                </p>
+                <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
+                  {link.value}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="flex w-full flex-col gap-3 border-t border-white/10 py-4">
+    <h2
+      class="text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']"
+    >
+      Languages
+    </h2>
+    <ul class="m-0 flex list-none flex-col gap-3">
+      {
+        languages.map((link) => (
+          <li>
+            <a href={link.href} class="group flex items-center gap-2 self-stretch">
+              <span
+                class:list={[
+                  'flex h-4 w-4 shrink-0 items-center justify-center rounded-[100px] group-hover:bg-[var(--Gray-Darkest,#232339)]',
+                  link.iconClass,
+                ]}
+              >
+                <Fragment set:html={link.icon} />
+              </span>
+              <div>
+                <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
+                  {link.label}
+                </p>
+                <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
+                  {link.value}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </section>
