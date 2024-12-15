@@ -4,26 +4,38 @@ import figmaImage from '@assets/projects/figma-project.png'; // You'll need to a
 import { Image } from 'astro:assets';
 ---
 
-<section>
-  <h2>Latest Projects</h2>
-  <ul>
-    <li>
-      <a href="https://github.com/royeradames/astro-portfolio">
-        <div>
+<section class="flex flex-col gap-4">
+  <h2 class="text-gray-lightest font-outfit leading-16px tracking-0.12px text-6xl font-bold">
+    Latest Projects
+  </h2>
+  <ul class="flex gap-1">
+    <li class="pb-6">
+      <a href="#" class="bg-gray-darker flex max-w-md flex-col gap-2 rounded-l-lg p-3">
+        <div class="flex items-center justify-center gap-2">
           <Image
             src={figmaImage}
             width={24}
             height={24}
             alt="Powerful Design System"
-            quality={100}
+            densities={[1, 2, 3]}
             format="webp"
-          /><hgroup>
-            <h3>Poweful Design System</h3>
-            <p>Figma UI Kit and Design System targeting a wide variety of use cases.</p>
+          />
+          <hgroup>
+            <h3 class="text-gray-lightest font-mono text-3xl font-bold leading-10">
+              Poweful Design System
+            </h3>
+            <p class="text-gray-lightest tracking-0.07 font-mono text-lg font-normal leading-9">
+              Figma UI Kit and Design System targeting a wide variety of use cases.
+            </p>
           </hgroup>
         </div>
-        <p>
-          <span><FigmaIcon /></span>
+        <p
+          class="text-secondary-light flex items-center gap-2 font-sans text-base font-bold leading-10"
+        >
+          <span
+            class="bg-secondary-dark inline-flex h-4 w-4 items-center justify-center rounded-full"
+            ><FigmaIcon height="16" width="16" /></span
+          >
           https//figma.com
         </p>
       </a>
