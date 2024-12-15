@@ -1,5 +1,6 @@
 ---
-import Header from '@components/Header.astro';
+import Bio from '@components/Bio.astro';
+import LatestProjects from '@components/LatestProjects.astro';
 import Layout from '@layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +8,10 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-  <Header />
+  <main class="flex gap-4">
+    <Bio />
+    <div class="flex flex-col gap-4">
+      <LatestProjects />
+    </div>
+  </main>
 </Layout>

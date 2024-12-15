@@ -1,0 +1,32 @@
+---
+import { FigmaIcon } from '@assets/icons';
+import figmaImage from '@assets/projects/figma-project.png'; // You'll need to add your image to the assets folder
+import { Image } from 'astro:assets';
+---
+
+<section>
+  <h2>Latest Projects</h2>
+  <ul>
+    <li>
+      <a href="https://github.com/royeradames/astro-portfolio">
+        <div>
+          <Image
+            src={figmaImage}
+            width={24}
+            height={24}
+            alt="Powerful Design System"
+            quality={100}
+            format="webp"
+          /><hgroup>
+            <h3>Poweful Design System</h3>
+            <p>Figma UI Kit and Design System targeting a wide variety of use cases.</p>
+          </hgroup>
+        </div>
+        <p>
+          <span><FigmaIcon /></span>
+          https//figma.com
+        </p>
+      </a>
+    </li>
+  </ul>
+</section>
