@@ -2,18 +2,18 @@
 import { Image } from 'astro:assets';
 import profileImage from '../assets/profile-image.jpeg';
 
-type Link = {
+type ListItem = {
   href: string;
-  label: string;
-  value: string;
+  title: string;
+  subTitle: string;
   icon: string;
+  iconClass?: string;
 };
-
-const links: Link[] = [
+const links: ListItem[] = [
   {
     href: 'mailto:adamesroyer@gmail.com',
-    label: 'Email',
-    value: 'adamesroyer@gmail.com',
+    title: 'Email',
+    subTitle: 'adamesroyer@gmail.com',
     icon: `<svg
         xmlns="http://www.w3.org/2000/svg"
         width="10"
@@ -27,35 +27,27 @@ const links: Link[] = [
   },
   {
     href: 'https://royeradames.com',
-    label: 'Website',
-    value: 'https://royeradames.com',
+    title: 'Website',
+    subTitle: 'https://royeradames.com',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
   <path d="M3.52721 8.55627C2.68465 8.55627 1.92504 8.04872 1.60255 7.27031C1.28006 6.49191 1.45819 5.59588 2.05388 5.00001L2.93805 4.11584L3.52721 4.70501L2.64346 5.58876C2.32766 5.90457 2.20432 6.36487 2.31991 6.79627C2.43551 7.22767 2.77247 7.56463 3.20387 7.68023C3.63527 7.79582 4.09557 7.67248 4.41138 7.35668L5.29513 6.47293L5.8843 7.06251L5.00055 7.94626C4.61058 8.33815 4.08007 8.55779 3.52721 8.55627ZM3.8218 6.76751L3.23263 6.17834L6.17888 3.23209L6.76805 3.82126L3.82221 6.76709L3.8218 6.76751ZM7.06305 5.88376L6.47346 5.29459L7.35722 4.41084C7.67732 4.09598 7.80396 3.63362 7.68898 3.19958C7.574 2.76555 7.23506 2.42653 6.80105 2.31144C6.36704 2.19636 5.90465 2.32289 5.58971 2.64293L4.70555 3.52668L4.11638 2.93751L5.00055 2.05334C5.81517 1.24583 7.12929 1.24871 7.94036 2.05978C8.75144 2.87085 8.75431 4.18497 7.9468 4.99959L7.06305 5.88334V5.88376Z" fill="#E2E6EE"/>
 </svg>`,
   },
   {
     href: 'https://maps.app.goo.gl/DoVHmr6qFiWSQ2Pz7',
-    label: 'Address',
-    value: 'Florida, USA',
+    title: 'Address',
+    subTitle: 'Florida, USA',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
   <path d="M5.00016 8.75002C4.47389 8.30112 3.98607 7.80899 3.54183 7.27877C2.87516 6.48252 2.0835 5.29669 2.0835 4.16669C2.08291 2.9865 2.7936 1.92227 3.88394 1.4706C4.97428 1.01894 6.22936 1.26887 7.0635 2.10377C7.61202 2.64986 7.91929 3.39268 7.91685 4.16669C7.91685 5.29669 7.12516 6.48252 6.4585 7.27877C6.01425 7.80899 5.52644 8.30112 5.00016 8.75002ZM5.00016 2.91669C4.55358 2.91669 4.14092 3.15494 3.91763 3.54169C3.69434 3.92844 3.69434 4.40494 3.91763 4.79169C4.14092 5.17844 4.55358 5.41669 5.00016 5.41669C5.69052 5.41669 6.25016 4.85704 6.25016 4.16669C6.25016 3.47633 5.69052 2.91669 5.00016 2.91669Z" fill="#D9DFE8"/>
 </svg>`,
   },
 ];
 
-type SocialLink = {
-  href: string;
-  label: string;
-  value: string;
-  icon: string;
-  iconClass: string;
-};
-
-const socials: SocialLink[] = [
+const socials: ListItem[] = [
   {
     href: 'https://x.com/RoyerAAdames',
-    label: 'Twitter',
-    value: '@RoyerAAdames',
+    title: 'Twitter',
+    subTitle: '@RoyerAAdames',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
   <path d="M8.33126 3.28668C8.70477 3.06339 8.98425 2.71178 9.11751 2.29752C8.76653 2.50577 8.38252 2.65246 7.98209 2.73127C7.42692 2.14399 6.5473 2.00107 5.83476 2.38237C5.12221 2.76368 4.75313 3.5748 4.93376 4.36252C3.49609 4.29034 2.15666 3.61123 1.24876 2.49418C0.77494 3.31144 1.01707 4.35617 1.80209 4.88168C1.51822 4.87256 1.24064 4.7957 0.992506 4.65752C0.992506 4.66502 0.992506 4.67252 0.992506 4.68002C0.992671 5.53133 1.59266 6.26463 2.42709 6.43335C2.16378 6.50499 1.88759 6.51553 1.61959 6.46418C1.85426 7.19221 2.52524 7.69097 3.29001 7.70585C2.6566 8.20299 1.87437 8.47258 1.06917 8.47127C0.926453 8.47147 0.783844 8.46326 0.64209 8.44668C1.45975 8.97211 2.41141 9.251 3.38334 9.25002C4.73553 9.2593 6.03502 8.72623 6.99114 7.77002C7.94727 6.81382 8.48024 5.51429 8.47084 4.1621C8.47084 4.0846 8.46903 4.00752 8.46542 3.93085C8.81561 3.67777 9.11784 3.36424 9.35792 3.00502C9.03168 3.14963 8.68562 3.24457 8.33126 3.28668Z" fill="white"/>
 </svg>`,
@@ -63,8 +55,8 @@ const socials: SocialLink[] = [
   },
   {
     href: 'https://www.linkedin.com/in/royer-adames/',
-    label: 'LinedIn',
-    value: 'Royer Adames',
+    title: 'LinedIn',
+    subTitle: 'Royer Adames',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
   <path d="M5.41667 9.25H3.75V4.25H5.41667V5.08333C5.77193 4.63136 6.31068 4.36191 6.88542 4.34875C7.919 4.35449 8.753 5.19557 8.75001 6.22917V9.25H7.08333V6.4375C7.01668 5.97193 6.6174 5.62649 6.14708 5.6275C5.94137 5.634 5.74718 5.72407 5.60935 5.87693C5.47152 6.02978 5.40194 6.23221 5.41667 6.4375V9.25ZM2.91667 9.25H1.25V4.25H2.91667V9.25ZM2.08333 3.41667C1.6231 3.41667 1.25 3.04357 1.25 2.58333C1.25 2.1231 1.6231 1.75 2.08333 1.75C2.54357 1.75 2.91667 2.1231 2.91667 2.58333C2.91667 2.80435 2.82887 3.01631 2.67259 3.17259C2.51631 3.32887 2.30435 3.41667 2.08333 3.41667Z" fill="white"/>
 </svg>`,
@@ -72,20 +64,22 @@ const socials: SocialLink[] = [
   },
   {
     href: 'https://github.com/royeradames',
-    label: 'GitHub',
-    value: 'royeradames',
-    icon: `<svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
-    <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+    title: 'GitHub',
+    subTitle: 'royeradames',
+    icon: `<svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" style="
+    fill: currentColor;
+">
+  <path clip-rule="evenodd" d="M9.84282 0.800049C4.40466 0.800049 0 5.20471 0 10.6429C0 14.9983 2.81751 18.6771 6.73003 19.9812C7.22217 20.0674 7.40672 19.7721 7.40672 19.5137C7.40672 19.2799 7.39442 18.5048 7.39442 17.6805C4.92141 18.1357 4.28163 17.0776 4.08477 16.524C3.97404 16.241 3.4942 15.3674 3.07588 15.1337C2.73138 14.9491 2.23924 14.4939 3.06358 14.4816C3.8387 14.4693 4.39236 15.1952 4.57691 15.4905C5.46277 16.9792 6.87767 16.5609 7.44363 16.3025C7.52976 15.6627 7.78813 15.2321 8.07111 14.986C5.88109 14.7399 3.59263 13.891 3.59263 10.1261C3.59263 9.05571 3.97404 8.16986 4.60152 7.48086C4.50309 7.23479 4.15859 6.2259 4.69995 4.87252C4.69995 4.87252 5.52428 4.61414 7.40672 5.8814C8.19415 5.65994 9.03079 5.54921 9.86743 5.54921C10.7041 5.54921 11.5407 5.65994 12.3281 5.8814C14.2106 4.60184 15.0349 4.87252 15.0349 4.87252C15.5763 6.2259 15.2318 7.23479 15.1333 7.48086C15.7608 8.16986 16.1422 9.04341 16.1422 10.1261C16.1422 13.9033 13.8415 14.7399 11.6514 14.986C12.0082 15.2936 12.3158 15.8842 12.3158 16.8069C12.3158 18.1234 12.3035 19.1815 12.3035 19.5137C12.3035 19.7721 12.4881 20.0797 12.9802 19.9812C14.9341 19.3216 16.632 18.0657 17.8349 16.3906C19.0378 14.7153 19.6851 12.7051 19.6856 10.6429C19.6856 5.20471 15.281 0.800049 9.84282 0.800049Z" fill-rule="evenodd"></path>
 </svg>`,
-    iconClass: 'bg-white',
+    iconClass: 'text-white',
   },
 ];
 
-const languages: SocialLink[] = [
+const languages: ListItem[] = [
   {
     href: 'https://en.wikipedia.org/wiki/English_language',
-    label: 'English',
-    value: 'Professional working',
+    title: 'English',
+    subTitle: 'Professional working',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
   <g clip-path="url(#clip0_330_10998)">
     <mask id="mask0_330_10998" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-2" y="-1" width="20" height="14">
@@ -109,12 +103,11 @@ const languages: SocialLink[] = [
   </defs>
 </svg>
 `,
-    iconClass: '',
   },
   {
-    href: 'https://www.linkedin.com/in/royer-adames/',
-    label: 'Spanish',
-    value: 'Native',
+    href: 'https://en.wikipedia.org/wiki/Spanish_language',
+    title: 'Spanish',
+    subTitle: 'Native',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
   <g clip-path="url(#clip0_330_11015)">
     <mask id="mask0_330_11015" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="12">
@@ -140,7 +133,6 @@ const languages: SocialLink[] = [
     </clipPath>
   </defs>
 </svg>`,
-    iconClass: '',
   },
 ];
 ---
@@ -194,10 +186,10 @@ const languages: SocialLink[] = [
             </span>
             <div>
               <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
-                {link.label}
+                {link.title}
               </p>
               <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
-                {link.value}
+                {link.subTitle}
               </p>
             </div>
           </a>
@@ -227,10 +219,10 @@ const languages: SocialLink[] = [
               </span>
               <div>
                 <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
-                  {link.label}
+                  {link.title}
                 </p>
                 <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
-                  {link.value}
+                  {link.subTitle}
                 </p>
               </div>
             </a>
@@ -261,10 +253,10 @@ const languages: SocialLink[] = [
               </span>
               <div>
                 <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-[color:var(--Gray-Light,#ACB1C3)] [font-family:'DM_Sans']">
-                  {link.label}
+                  {link.title}
                 </p>
                 <p class="self-stretch text-[7px] font-medium leading-[9px] text-[color:var(--Gray-Lighter,#D9DFE8)] [font-family:'DM_Sans']">
-                  {link.value}
+                  {link.subTitle}
                 </p>
               </div>
             </a>
