@@ -30,6 +30,10 @@ export default {
           twitter: '#00ACEE',
         },
       },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+        'dm-sans': ['"DM Sans"', 'sans-serif'],
+      },
     },
   },
   plugins: [
