@@ -1,5 +1,6 @@
 ---
 import Bio from '@components/Bio.astro';
+import Experience from '@components/Experience.astro';
 import LatestProjects from '@components/LatestProjects.astro';
 import Layout from '@layouts/Layout.astro';
 
@@ -8,10 +9,11 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-  <main class="bg-gray-darkest flex min-h-screen gap-4">
+  <main class="flex min-h-screen gap-4 bg-gray-darkest">
     <Bio />
-    <div class="flex p-8">
+    <div class="flex flex-col p-8">
       <LatestProjects />
+      <Experience />
     </div>
   </main>
 </Layout>
