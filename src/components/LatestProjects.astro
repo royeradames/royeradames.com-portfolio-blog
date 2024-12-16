@@ -30,13 +30,13 @@ const projects = [
   <h2 class="text-gray-lightest font-outfit leading-16px tracking-0.12px text-2xl font-bold">
     Latest Projects
   </h2>
-  <ul class="flex flex-wrap gap-4 pb-6">
+  <ul class="flex flex-wrap gap-1 pb-6">
     {
       projects.map((project) => (
-        <li class="">
+        <li class="odd:rounded-l-lg even:rounded-r-lg">
           <a
             href={project.aHref}
-            class="bg-gray-darker flex max-w-md flex-col gap-2 rounded-l-lg p-3"
+            class="bg-gray-darker flex h-full w-full max-w-md flex-col gap-2 rounded-[inherit] p-3"
           >
             <div class="flex items-center justify-center gap-2">
               <Image
