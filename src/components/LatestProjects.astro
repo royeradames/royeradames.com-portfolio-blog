@@ -26,46 +26,57 @@ const projects = [
 ];
 ---
 
-<section class="flex flex-col gap-4">
-  <h2 class="text-gray-lightest font-outfit leading-16px tracking-0.12px text-2xl font-bold">
-    Latest Projects
-  </h2>
-  <ul class="flex flex-wrap gap-1 pb-6">
-    {
-      projects.map((project) => (
-        <li class="odd:rounded-l-lg even:rounded-r-lg">
-          <a
-            href={project.aHref}
-            class="bg-gray-darker flex h-full w-full max-w-md flex-col gap-2 rounded-[inherit] p-3"
-          >
-            <div class="flex items-center justify-center gap-2">
-              <Image
-                src={project.image}
-                width={48}
-                height={48}
-                alt={project.imageAlt}
-                densities={[1, 2, 3]}
-                format="webp"
-                class="rounded-md"
-              />
-              <hgroup>
-                <h3 class="text-gray-lightest font-mono text-xl font-bold leading-10">
-                  {project.title}
-                </h3>
-                <p class="text-gray-light tracking-0.07 font-mono text-base font-normal leading-9">
-                  {project.description}
-                </p>
-              </hgroup>
-            </div>
-            <p class="text-secondary-light flex items-center gap-2 font-sans text-sm font-bold leading-10">
-              <span class="bg-secondary-dark inline-flex h-4 w-4 items-center justify-center rounded-full">
-                <project.Icon height="16" width="16" />
-              </span>
-              {project.link}
-            </p>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+<section class="flex gap-4">
+  <div id="list-visual" class="flex flex-col items-center" aria-hidden="true">
+    <div
+      id="dot-background"
+      class="bg-gray-darker flex h-12 w-12 items-center justify-center rounded-full"
+    >
+      <div id="dot" class="bg-primary-light h-3 w-3 rounded-full"></div>
+    </div>
+    <div id="divider" class="bg-gray-darker h-full w-1"></div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h2 class="text-gray-lightest font-outfit leading-16px tracking-0.12px text-2xl font-bold">
+      Latest Projects
+    </h2>
+    <ul class="flex flex-wrap gap-1 pb-6">
+      {
+        projects.map((project) => (
+          <li class="odd:rounded-l-lg even:rounded-r-lg">
+            <a
+              href={project.aHref}
+              class="bg-gray-darker flex h-full w-full max-w-md flex-col gap-2 rounded-[inherit] p-3"
+            >
+              <div class="flex items-center justify-center gap-2">
+                <Image
+                  src={project.image}
+                  width={48}
+                  height={48}
+                  alt={project.imageAlt}
+                  densities={[1, 2, 3]}
+                  format="webp"
+                  class="rounded-md"
+                />
+                <hgroup>
+                  <h3 class="text-gray-lightest font-mono text-xl font-bold leading-10">
+                    {project.title}
+                  </h3>
+                  <p class="text-gray-light tracking-0.07 font-mono text-base font-normal leading-9">
+                    {project.description}
+                  </p>
+                </hgroup>
+              </div>
+              <p class="text-secondary-light flex items-center gap-2 font-sans text-sm font-bold leading-10">
+                <span class="bg-secondary-dark inline-flex h-4 w-4 items-center justify-center rounded-full">
+                  <project.Icon height="16" width="16" />
+                </span>
+                {project.link}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
