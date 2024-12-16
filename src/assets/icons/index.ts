@@ -7,7 +7,6 @@ import LinkedInIcon from './linkedin-icon.svg';
 import SpanishIcon from './spanish-icon.svg';
 import TwitterIcon from './twitter-icon.svg';
 import WebsiteIcon from './website-icon.svg';
-
 export {
   AddressIcon,
   EmailIcon,
