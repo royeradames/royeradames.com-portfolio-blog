@@ -1,5 +1,5 @@
 ---
-import { AppleLogo, TeslaLogo } from '@assets/business-logos';
+import { AppleLogo, GoogleLogo, TeslaLogo, VectornatorLogo } from '@assets/business-logos';
 import { LocationIcon } from '@assets/icons';
 import StepIconWrapPrimary from './StepIconWrapPrimary.astro';
 import StepIconWrapSecondary from './StepIconWrapSecondary.astro';
@@ -22,6 +22,24 @@ const experiences = [
     description:
       'Commodi atque sit ut qui assumenda earum aperiam occaecati voluptates. Fuga quas aut soluta nostrum et beatae. Maiores repudiandae quibusdam autem enim ut in possimus ad.',
   },
+  {
+    time: 'Sep 2014 - Aug 2015',
+    location: 'Mountain View',
+    BusinessLogo: GoogleLogo,
+    company: 'Google',
+    role: 'Design system architect',
+    description:
+      'Ut molestias animi. Neque voluptate velit corporis adipisci voluptate et qui sed neque. Inventore eos non. Qui eveniet quo incidunt nemo.',
+  },
+  {
+    time: 'Sep 2010 - Jul 2013',
+    location: 'Berlin',
+    BusinessLogo: VectornatorLogo,
+    company: 'Vectornator',
+    role: 'Design system architect',
+    description:
+      'Non in fugiat aut consequatur deleniti. Consequuntur impedit modi asperiores impedit ut ea aut eligendi doloremque. Fugit laborum ducimus hic tempore velit. Sed vitae et corrupti omnis temporibus. Unde voluptas quaerat ea rerum aspernatur autem assumenda animi fugit. Omnis laborum velit voluptatum similique accusantium eveniet voluptatem.',
+  },
 ];
 ---
 
@@ -38,7 +56,7 @@ const experiences = [
             <StepIconWrapSecondary />
             <div class="flex w-full justify-between gap-2 text-gray-light">
               <div class="flex flex-col gap-2">
-                <p class="flex flex-wrap items-center gap-4">
+                <p class="flex flex-wrap items-center gap-4 leading-[0]">
                   <span>{experience.time}</span>
                   <span>
                     <span class="sr-only">on</span>
