@@ -41,17 +41,20 @@ const experiences = [
                 <p class="flex flex-wrap items-center gap-4">
                   <span>Jul 20 - Jan 2022</span>
                   <span>
-                    <LocationIcon />
+                    <span class="sr-only">on</span>
+                    <LocationIcon aria-label="" />
                     Cupertino
                   </span>
                 </p>
-                <div class="flex flex-wrap items-center gap-4">
-                  <AppleLogo />
-                  <div class="flex flex-col gap-2">
-                    <p>Product designer</p>
-                    <p class="text-gray-lightest">Apple</p>
-                  </div>
-                </div>
+                <p class="flex flex-wrap items-center gap-4">
+                  <AppleLogo aria-label="" />
+                  <span class="flex flex-col gap-2">
+                    <span>Product designer</span>
+                    <span class="text-gray-lightest">
+                      <span class="sr-only">in</span> Apple
+                    </span>
+                  </span>
+                </p>
               </div>
               <p class="max-w-md">
                 Omnis minima inventore minus. Aut et incidunt. Aut fugiat culpa illum optio dolorum
