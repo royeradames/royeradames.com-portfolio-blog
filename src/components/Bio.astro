@@ -1,7 +1,4 @@
 ---
-import profileImage from '@assets/profile-image.jpeg';
-import { Image } from 'astro:assets';
-import LinkList from './LinkList.astro';
 import {
   AddressIcon,
   EmailIcon,
@@ -12,9 +9,12 @@ import {
   TwitterIcon,
   WebsiteIcon,
 } from '@assets/icons';
+import profileImage from '@assets/profile-image.jpeg';
+import { Image } from 'astro:assets';
+import LinkList from './LinkList.astro';
 ---
 
-<section class="flex h-[842px] w-[180px] shrink-0 flex-col items-start gap-4 bg-gray-darker p-6">
+<section class="flex h-full w-[280px] shrink-0 flex-col items-start gap-4 bg-gray-darker p-6">
   <header class="flex flex-col items-start justify-center gap-2 self-stretch">
     <Image
       src={profileImage}
@@ -27,12 +27,12 @@ import {
     />
     <hgroup class="flex flex-col items-start gap-1 self-stretch">
       <h1
-        class="self-stretch text-base font-medium leading-5 tracking-[-0.32px] text-gray-lightest [font-family:Outfit]"
+        class="self-stretch text-3xl font-medium leading-relaxed tracking-wider text-gray-lightest [font-family:Outfit]"
       >
         Royer Adames
       </h1>
       <p
-        class="text-primary-gradient self-stretch text-xs font-medium leading-4 tracking-[0.12px] [font-family:Outfit]"
+        class="self-stretch text-base font-medium leading-normal tracking-wider text-primary-gradient [font-family:Outfit]"
       >
         Full-Stack Developer
       </p>
@@ -41,16 +41,16 @@ import {
 
   <blockquote>
     <p
-      class="self-stretch text-[9px] font-medium leading-3 tracking-[0.18px] text-gray-lighter [font-family:Outfit]"
+      class="self-stretch text-base font-medium leading-normal tracking-widest text-gray-lighter [font-family:Outfit]"
     >
       <span class="quote-mark">"</span>People value web development that values their needs.<span
         class="quote-mark">"</span
       >
     </p>
     <cite
-      class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-gray-light [font-family:'DM_Sans']"
+      class="self-stretch text-sm font-normal leading-normal tracking-wider text-gray-light [font-family:'DM_Sans']"
     >
-      Royer Adames
+      - Royer Adames
     </cite>
   </blockquote>
 

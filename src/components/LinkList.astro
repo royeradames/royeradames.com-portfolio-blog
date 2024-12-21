@@ -18,7 +18,7 @@ const { title, links, className = '' } = Astro.props;
 <section class:list={['flex w-full flex-col gap-3 border-t border-white/10 pt-4', className]}>
   {
     title && (
-      <h2 class="text-[6px] font-normal leading-[8px] tracking-[0.06px] text-gray-light [font-family:'DM_Sans']">
+      <h2 class="font-dm-sans text-2xl font-normal leading-normal tracking-wider text-gray-light">
         {title}
       </h2>
     )
@@ -32,17 +32,17 @@ const { title, links, className = '' } = Astro.props;
             <a href={link.href} class="group flex items-center gap-2 self-stretch">
               <span
                 class:list={[
-                  'flex h-4 w-4 shrink-0 items-center justify-center rounded-[100px] group-hover:bg-gray-darkest',
+                  'flex h-8 w-8 shrink-0 items-center justify-center rounded-full group-hover:bg-gray-darkest',
                   link.iconClass,
                 ]}
               >
-                <Icon />
+                <Icon class="h-4 w-4" />
               </span>
               <div>
-                <p class="self-stretch text-[6px] font-normal leading-[8px] tracking-[0.06px] text-gray-light [font-family:'DM_Sans']">
+                <p class="self-stretch font-dm-sans text-base font-normal leading-normal tracking-wider text-gray-light">
                   {link.title}
                 </p>
-                <p class="self-stretch text-[7px] font-medium leading-[9px] text-gray-lighter [font-family:'DM_Sans']">
+                <p class="self-stretch font-dm-sans text-sm font-medium leading-relaxed text-gray-lighter">
                   {link.subTitle}
                 </p>
               </div>
