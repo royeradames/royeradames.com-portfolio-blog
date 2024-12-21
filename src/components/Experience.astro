@@ -1,17 +1,26 @@
 ---
-import { AppleLogo } from '@assets/business-logos';
-import { FigmaIcon, LocationIcon } from '@assets/icons';
-import figmaImage from '@assets/projects/figma-project.png'; // You'll need to add your image to the assets folder
+import { AppleLogo, TeslaLogo } from '@assets/business-logos';
+import { LocationIcon } from '@assets/icons';
 import StepIconWrapPrimary from './StepIconWrapPrimary.astro';
 import StepIconWrapSecondary from './StepIconWrapSecondary.astro';
 const experiences = [
   {
-    image: figmaImage,
-    imageAlt: 'Powerful Design System',
-    title: 'Powerful Design System',
-    description: 'Figma UI Kit and Design System targeting a wide variety of use cases.',
-    link: 'https://figma.com',
-    Icon: FigmaIcon,
+    time: 'Jul 20 - Jan 2022',
+    location: 'Cupertino',
+    BusinessLogo: AppleLogo,
+    company: 'Apple',
+    role: 'Product designer',
+    description:
+      'Omnis minima inventore minus. Aut et incidunt. Aut fugiat culpa illum optio dolorum aut maxime ipsa. Laborum incidunt enim consectetur perspiciatis. Dolore ullam dolor impedit dolorum recusandae facilis quo et. Et ipsam vel sunt qui ut officia voluptatem.',
+  },
+  {
+    time: 'Oct 2015 - Mar 2020',
+    location: 'Austin',
+    BusinessLogo: TeslaLogo,
+    company: 'Tesla',
+    role: 'UX designer',
+    description:
+      'Commodi atque sit ut qui assumenda earum aperiam occaecati voluptates. Fuga quas aut soluta nostrum et beatae. Maiores repudiandae quibusdam autem enim ut in possimus ad.',
   },
 ];
 ---
@@ -22,37 +31,32 @@ const experiences = [
     <h2 class="leading-16px tracking-0.12px font-outfit text-2xl font-bold text-gray-lightest">
       Experience
     </h2>
-    <ul class="flex flex-wrap gap-1 pb-6">
+    <ul class="flex flex-wrap gap-4 pb-6">
       {
-        experiences.map((project) => (
+        experiences.map((experience) => (
           <li class="group flex w-full gap-4">
             <StepIconWrapSecondary />
             <div class="flex w-full justify-between gap-2 text-gray-light">
               <div class="flex flex-col gap-2">
                 <p class="flex flex-wrap items-center gap-4">
-                  <span>Jul 20 - Jan 2022</span>
+                  <span>{experience.time}</span>
                   <span>
                     <span class="sr-only">on</span>
                     <LocationIcon aria-label="" />
-                    Cupertino
+                    {experience.location}
                   </span>
                 </p>
                 <p class="flex flex-wrap items-center gap-4">
-                  <AppleLogo aria-label="" />
+                  <experience.BusinessLogo aria-label="" class="h-20 w-20" />
                   <span class="flex flex-col gap-2">
-                    <span>Product designer</span>
+                    <span>{experience.role}</span>
                     <span class="text-gray-lightest">
-                      <span class="sr-only">in</span> Apple
+                      <span class="sr-only">in</span> {experience.company}
                     </span>
                   </span>
                 </p>
               </div>
-              <p class="max-w-md">
-                Omnis minima inventore minus. Aut et incidunt. Aut fugiat culpa illum optio dolorum
-                aut maxime ipsa. Laborum incidunt enim consectetur perspiciatis. Dolore ullam dolor
-                impedit dolorum recusandae facilis quo et. Et ipsam vel sunt qui ut officia
-                voluptatem.
-              </p>
+              <p class="max-w-md">{experience.description}</p>
             </div>
           </li>
         ))
