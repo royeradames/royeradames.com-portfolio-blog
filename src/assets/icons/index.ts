@@ -8,7 +8,6 @@ import LocationIcon from './location.svg';
 import SpanishIcon from './spanish-icon.svg';
 import TwitterIcon from './twitter-icon.svg';
 import WebsiteIcon from './website-icon.svg';
-
 export {
   AddressIcon,
   EmailIcon,

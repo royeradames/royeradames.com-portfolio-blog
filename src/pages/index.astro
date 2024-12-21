@@ -1,7 +1,8 @@
 ---
 import Bio from '@components/Bio.astro';
+import Education from '@components/Education.astro';
 import Experience from '@components/Experience.astro';
-import LatestProjects from '@components/LatestProjects.astro';
+import Projects from '@components/projects.astro';
 import Layout from '@layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,11 +10,12 @@ import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-  <main class="flex min-h-screen gap-4 bg-gray-darkest">
+  <main class="flex min-h-screen flex-wrap gap-4 bg-gray-darkest">
     <Bio />
     <div class="flex flex-col p-8">
-      <LatestProjects />
+      <Projects />
       <Experience />
+      <Education />
     </div>
   </main>
 </Layout>

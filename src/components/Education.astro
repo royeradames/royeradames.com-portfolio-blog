@@ -1,0 +1,48 @@
+---
+import { IntegrisLogo } from '@assets/business-logos';
+import StepIconWrapPrimary from './StepIconWrapPrimary.astro';
+const projects = [
+  {
+    title: 'Integris Group In-house Training',
+    time: 'Aug. 2020 to Sept. 2023',
+    BusinessLogo: IntegrisLogo,
+    list: [
+      'Enhanced Agile and Scrum methodologies, focusing on adaptability and continuous improvement.',
+      'Acquired proficiency in Tridion CMS for collaborative content and knowledge management.',
+      'Developed skills in Regular Expressions (Regex) for efficient text searching and pattern matching in programming tasks.',
+      'Focused on accessible web development, learning to create and test websites for compatibility with assistive technology.',
+    ],
+  },
+];
+---
+
+<section class="flex gap-4">
+  <StepIconWrapPrimary />
+  <div class="flex flex-col gap-4">
+    <h2 class="leading-16px tracking-0.12px font-outfit text-2xl font-bold text-gray-lightest">
+      Education
+    </h2>
+    <ul class="flex flex-wrap gap-4 pb-6">
+      {
+        projects.map((project) => (
+          <li>
+            <section class="flex h-full w-full max-w-3xl flex-col gap-2 rounded-lg bg-gray-darker p-8">
+              <header class="flex items-center justify-center gap-2">
+                <project.BusinessLogo aria-label="" class="inline-flex h-20 w-20 flex-shrink-0" />
+                <h3 class="flex flex-wrap justify-between font-mono text-xl font-bold leading-normal text-gray-lightest">
+                  <span class="font-bold">{project.title}</span>
+                  <span class="font-normal">{project.time}</span>
+                </h3>
+              </header>
+              <ul class="flex list-inside flex-col gap-2 font-sans text-base leading-normal text-gray-light">
+                {project.list.map((item) => (
+                  <li class="list-disc">{item}</li>
+                ))}
+              </ul>
+            </section>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
